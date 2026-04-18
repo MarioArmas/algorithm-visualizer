@@ -1,0 +1,35 @@
+.sorting-visualizer {
+  width: 100%;
+}
+
+.sorting-chart {
+  display: flex;
+  align-items: flex-end;
+  gap: 4px;
+  height: 200px;
+  width: 40%;
+}
+
+.sorting-bar {
+  flex: 1;
+  height: var(--bar-height);
+  border-radius: 3px 3px 0 0;
+  transition: height 0.1s ease;
+  background: #6c63ff;
+}
+
+.sorting-bar--swapping {
+  background: #ff6584;
+}
+
+.sorting-bar--comparing {
+  background: #ffb347;
+}
+
+.sorting-bar--sorted {
+  background: #43d9ad;
+}
+
+.sorting-bar--pivot {
+  background: #6c63ff;
+}
