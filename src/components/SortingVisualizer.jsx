@@ -79,7 +79,7 @@ export default function SortingVisualizer({ algorithm, title, complexity, comple
         <button className="sv-btn" onClick={reset}>↺ Reset</button>
         <div className="sv-speed">
           <span>vel</span>
-          <input type="range" min={50} max={500} defaultValue={200} onChange={(e) => setSpeed(Number(e.target.value))} />
+          <input type="range" min={50} max={500} defaultValue={550 / 2} onChange={(e) => setSpeed(550 - Number(e.target.value))} />
         </div>
       </div>
     </div>
