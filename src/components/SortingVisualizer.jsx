@@ -3,7 +3,7 @@ import { useAlgorithm } from '../hooks/useAlgorithm'
 
 const INITIAL = [22, 84, 11, 43, 64, 30, 90, 12, 54, 34, 72, 25, 40, 50]
 
-export default function SortingVisualizer({ algorithm }) {
+export default function SortingVisualizer({ algorithm, title, complexity, complexityColor }) {
   const {
     array,
     highlight,
@@ -33,7 +33,12 @@ export default function SortingVisualizer({ algorithm }) {
   }
 
   return (
-    <div className="sorting-visualizer">
+    <div className="sv-card">
+      <div className="sv-header">
+        <h2 className="sv-title">{title}</h2>
+        <span className="sv-complexity" style={{ color: complexityColor }}>{complexity}</span>
+      </div>
+
       <div className="sorting-chart">
         {array.map((val, i) => {
           const kind = barKind(i)
@@ -49,23 +54,34 @@ export default function SortingVisualizer({ algorithm }) {
         })}
       </div>
 
-      <p>{message}</p>
-      <p>
-        Paso {stepIdx + 1} / {totalSteps} | Comparaciones: {stats.comparisons} |
-        Swaps: {stats.swaps}
-      </p>
+      <div className="sv-message">
+        {message || '\u00A0'}
+      </div>
 
-      <button onClick={stepBackward}>← Atrás</button>
-      <button onClick={togglePlay}>{isPlaying ? '⏸ Pausa' : '▶ Play'}</button>
-      <button onClick={stepForward}>Adelante →</button>
-      <button onClick={reset}>↺ Reset</button>
+      <div className="sv-divider"></div>
 
-      <input
-        type="range"
-        min={50}
-        max={500}
-        onChange={(e) => setSpeed(Number(e.target.value))}
-      />
+      <div className="sv-stats">
+        <div className="sv-stats-left">
+          <span>comparaciones <span className="sv-stat-val">{stats.comparisons}</span></span>
+          <span>swaps <span className="sv-stat-val">{stats.swaps}</span></span>
+        </div>
+        <div className="sv-stats-right">
+          <span>paso <span className="sv-stat-val">{stepIdx + 1}/{totalSteps}</span></span>
+        </div>
+      </div>
+
+      <div className="sv-controls">
+        <button className="sv-btn" onClick={togglePlay} aria-label="Play or Pause">
+          {isPlaying ? '⏸ Pause' : '▶ Play'}
+        </button>
+        <button className="sv-btn" onClick={stepBackward} aria-label="Previous step">←</button>
+        <button className="sv-btn" onClick={stepForward} aria-label="Next step">→</button>
+        <button className="sv-btn" onClick={reset}>↺ Reset</button>
+        <div className="sv-speed">
+          <span>vel</span>
+          <input type="range" min={50} max={500} defaultValue={200} onChange={(e) => setSpeed(Number(e.target.value))} />
+        </div>
+      </div>
     </div>
   )
 }

@@ -1,38 +1,69 @@
-.App {
-  text-align: center;
+.app-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2.5rem 1rem;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.app-header {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
 }
 
-.App-link {
-  color: #61dafb;
+.app-title {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #222222;
+  margin: 0;
+  letter-spacing: -1px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+.badge-demo {
+  background-color: transparent;
+  border: 1px solid #483d8b;
+  color: #6a5acd;
+  border-radius: 6px;
+  padding: 4px 10px;
+  font-size: 0.8rem;
+  font-family: monospace;
+  text-transform: lowercase;
+}
+
+.legend {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  font-family: monospace;
+  color: #666;
+}
+
+.legend-color {
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+}
+.legend-color.normal { background: #6c63ff; }
+.legend-color.comparando { background: #ffb347; }
+.legend-color.intercambiando { background: #ff6584; }
+.legend-color.pivot { background: #b388ff; }
+.legend-color.ordenado { background: #43d9ad; }
+
+.algorithms-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+@media (max-width: 900px) {
+  .algorithms-grid {
+    grid-template-columns: 1fr;
   }
 }
