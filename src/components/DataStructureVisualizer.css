@@ -2,9 +2,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 160px;
+  height: 230px;
   width: 100%;
-  margin-bottom: 2rem;
   background: rgba(0, 0, 0, 0.2);
   border-radius: 8px;
   overflow: hidden;
@@ -13,12 +12,15 @@
 }
 
 .ds-stack-container {
-  flex-direction: column-reverse; /* Bottom items at bottom */
+  flex-direction: column-reverse;
+  /* Bottom items at bottom */
   justify-content: flex-start;
   gap: 4px;
 }
 
-.ds-queue-container, .ds-array-container, .ds-ll-container {
+.ds-queue-container,
+.ds-array-container,
+.ds-ll-container {
   flex-direction: row;
   justify-content: flex-start;
   overflow-x: auto;
