@@ -5,6 +5,7 @@
   padding: 1.5rem;
   display: flex;
   flex-direction: column;
+  width: 518px;
 }
 
 .sv-header {
