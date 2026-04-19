@@ -142,3 +142,30 @@
 .ds-chart::-webkit-scrollbar-thumb:hover {
   background: #4a4a52;
 }
+
+/* Heap specific components */
+.ds-heap-container {
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 16px;
+}
+
+.ds-heap-level {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+.ds-block-active {
+  background: #43d9ad;
+  border-color: #43d9ad;
+  box-shadow: 0 0 15px #43d9ad;
+  transform: scale(1.1);
+}
+
+.ds-block-comparing {
+  background: #ffb347;
+  border-color: #ffb347;
+  box-shadow: 0 0 15px #ffb347;
+}

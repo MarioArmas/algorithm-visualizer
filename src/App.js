@@ -4,7 +4,7 @@ import SortAlgorithms from './pages/SortAlgorithms'
 import DataStructures from './pages/DataStructures'
 
 function App() {
-  const [activeTab, setActiveTab] = useState('sorting')
+  const [activeTab, setActiveTab] = useState('datastructures')
 
   return (
     <div className="app-container">

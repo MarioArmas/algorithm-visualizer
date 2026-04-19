@@ -3,6 +3,7 @@ import StackVisualizer from '../components/StackVisualizer'
 import QueueVisualizer from '../components/QueueVisualizer'
 import ArrayVisualizer from '../components/ArrayVisualizer'
 import LinkedListVisualizer from '../components/LinkedListVisualizer'
+import HeapVisualizer from '../components/HeapVisualizer'
 import '../components/DataStructureVisualizer.css'
 
 export default function DataStructures() {
@@ -19,6 +20,7 @@ export default function DataStructures() {
         <LinkedListVisualizer title="LINKED LIST" />
         <StackVisualizer title="STACK (PILA)" />
         <QueueVisualizer title="QUEUE (COLA)" />
+        <HeapVisualizer title="HEAP" />
       </div>
     </>
   )

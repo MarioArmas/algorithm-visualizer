@@ -23,6 +23,7 @@ An interactive web application built with React to visualize and understand how 
 *   **Queue (Cola)** - FIFO visualizer with `Enqueue` and `Dequeue`.
 *   **Array** - Contiguous memory visualizer with `Insert`, `Delete`, and `Access` via index.
 *   **Linked List** - Node-based sequence with pointer visualization (`head`, `tail`, `→`).
+*   **Heap (Montículo)** - Max-Heap tree visualizer with interactive `Heapify Up` and `Heapify Down` animations.
 
 ## Getting Started
 
