@@ -67,3 +67,34 @@
     grid-template-columns: 1fr;
   }
 }
+
+.app-tabs {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid #2a2b32;
+  padding-bottom: 1rem;
+}
+
+.tab-btn {
+  background: none;
+  border: none;
+  color: #666;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  transition: all 0.2s;
+}
+
+.tab-btn:hover {
+  color: #fff;
+  background: #2a2b32;
+}
+
+.tab-btn.active {
+  color: #6c63ff;
+  background: rgba(108, 99, 255, 0.1);
+}

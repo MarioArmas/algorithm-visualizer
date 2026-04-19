@@ -1,0 +1,121 @@
+.ds-chart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 160px;
+  width: 100%;
+  margin-bottom: 2rem;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+  padding: 1rem;
+}
+
+.ds-stack-container {
+  flex-direction: column-reverse; /* Bottom items at bottom */
+  justify-content: flex-start;
+  gap: 4px;
+}
+
+.ds-queue-container, .ds-array-container, .ds-ll-container {
+  flex-direction: row;
+  justify-content: flex-start;
+  overflow-x: auto;
+  gap: 8px;
+}
+
+.ds-block {
+  min-width: 50px;
+  height: 30px;
+  background: rgba(108, 99, 255, 0.8);
+  border: 1px solid #6c63ff;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-family: monospace;
+  font-weight: bold;
+  position: relative;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 8px rgba(108, 99, 255, 0.4);
+}
+
+.ds-block-animating {
+  background: #ffb347;
+  border-color: #ffb347;
+  box-shadow: 0 0 15px #ffb347;
+  transform: scale(1.1);
+}
+
+.ds-block-removing {
+  background: #ff6584;
+  border-color: #ff6584;
+  box-shadow: 0 0 15px #ff6584;
+  transform: scale(0.9);
+  opacity: 0.5;
+}
+
+.ds-pointer {
+  position: absolute;
+  font-size: 0.7rem;
+  color: #43d9ad;
+  font-family: monospace;
+  white-space: nowrap;
+}
+
+.ds-pointer-left {
+  right: calc(100% + 8px);
+}
+
+.ds-pointer-right {
+  left: calc(100% + 8px);
+}
+
+.ds-pointer-top {
+  bottom: calc(100% + 4px);
+}
+
+.ds-pointer-bottom {
+  top: calc(100% + 4px);
+}
+
+.ds-empty-msg {
+  color: #666;
+  font-family: monospace;
+  font-style: italic;
+}
+
+/* LinkedList specific */
+.ds-ll-node-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.ds-ll-arrow {
+  color: #666;
+  margin: 0 4px;
+  font-weight: bold;
+}
+
+/* Controls */
+.ds-controls {
+  justify-content: flex-start;
+  gap: 1rem;
+}
+
+.ds-input {
+  background: #2a2b32;
+  border: 1px solid #4a4a52;
+  border-radius: 4px;
+  color: #fff;
+  padding: 4px 8px;
+  width: 80px;
+  font-family: monospace;
+  outline: none;
+}
+
+.ds-input:focus {
+  border-color: #6c63ff;
+}

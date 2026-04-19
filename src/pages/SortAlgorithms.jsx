@@ -7,11 +7,7 @@ import { quickSortSteps } from '../algorithms/quickSort'
 
 export default function SortAlgorithms() {
   return (
-    <div className="app-container">
-      <div className="app-header">
-        <h1 className="app-title">Sort Algorithms</h1>
-        <span className="badge-demo">demo interactivo</span>
-      </div>
+    <>
 
       <div className="legend">
         <div className="legend-item"><div className="legend-color normal"></div> normal</div>
@@ -28,6 +24,6 @@ export default function SortAlgorithms() {
         <SortingVisualizer algorithm={quickSortSteps} title="QUICK SORT" complexity="O(N²)" complexityColor="#43d9ad" />
         <SortingVisualizer algorithm={mergeSortSteps} title="MERGE SORT" complexity="O(N log N)" complexityColor="#a371f7" />
       </div>
-    </div>
+    </>
   )
 }
