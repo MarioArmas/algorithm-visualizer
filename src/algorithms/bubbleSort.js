@@ -27,7 +27,7 @@ export function bubbleSortSteps(arr) {
       }
     }
     steps.push(
-      snap(a, { [n - 1 - i]: 'sorted' }, `Posición ${n - 1 - i} queda fija ✓`)
+      snap(a, {}, `Posición ${n - 1 - i} queda fija ✓`)
     )
   }
 

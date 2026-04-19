@@ -33,14 +33,13 @@ export function mergeSortSteps(arr) {
         )
       )
     }
-
     while (i < left.length) {
       a[k++] = left[i++]
-      steps.push(snap(a, { [k - 1]: 'sorted' }))
+      steps.push(snap(a, {}))
     }
     while (j < right.length) {
       a[k++] = right[j++]
-      steps.push(snap(a, { [k - 1]: 'sorted' }))
+      steps.push(snap(a, {}))
     }
   }
 

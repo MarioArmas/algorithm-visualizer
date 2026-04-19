@@ -33,3 +33,12 @@
 .sorting-bar--pivot {
   background: #6c63ff;
 }
+
+/* Colocación reciente (no es aún “ordenado global” para el histórico sticky) */
+.sorting-bar--inserted {
+  background: #7dd3c0;
+}
+
+.sorting-bar--merged {
+  background: #5ec4b6;
+}

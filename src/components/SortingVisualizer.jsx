@@ -11,7 +11,6 @@ export default function SortingVisualizer({ algorithm }) {
     stepIdx,
     totalSteps,
     isPlaying,
-    isFinished,
     togglePlay,
     stepForward,
     stepBackward,
@@ -26,7 +25,9 @@ export default function SortingVisualizer({ algorithm }) {
     return k === 'swapping' ||
       k === 'comparing' ||
       k === 'sorted' ||
-      k === 'pivot'
+      k === 'pivot' ||
+      k === 'inserted' ||
+      k === 'merged'
       ? k
       : null
   }

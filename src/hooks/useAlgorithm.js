@@ -1,25 +1,4 @@
-import { useState, useEffect, useRef, useCallback, useMemo } from 'react'
-
-/** Índices marcados 'sorted' en algún paso ≤ stepIdx; el paso actual pisa con comparing/swapping/pivot. */
-function mergeHighlightWithSortedHistory(steps, stepIdx, currentHighlight) {
-  const sortedEver = new Set()
-  for (let k = 0; k <= stepIdx; k++) {
-    const h = steps[k]?.highlight
-    if (!h) continue
-    for (const [idx, state] of Object.entries(h)) {
-      if (state === 'sorted') sortedEver.add(Number(idx))
-    }
-  }
-
-  const merged = {}
-  for (const idx of sortedEver) {
-    merged[idx] = 'sorted'
-  }
-  for (const [idx, state] of Object.entries(currentHighlight ?? {})) {
-    merged[Number(idx)] = state
-  }
-  return merged
-}
+import { useState, useEffect, useRef, useCallback } from 'react'
 
 /**
  * useAlgorithm
@@ -31,8 +10,9 @@ function mergeHighlightWithSortedHistory(steps, stepIdx, currentHighlight) {
  * Cada Step tiene la forma:
  *   { arr: number[], highlight: { [index]: 'comparing'|'swapping'|'sorted'|'pivot' }, msg: string }
  *
- * Los índices con 'sorted' en cualquier paso ≤ actual se mantienen en 'sorted' en la vista
- * hasta retroceder antes de ese paso; comparing/swapping/pivot del frame actual tienen prioridad.
+ * Índices con 'sorted' en cualquier paso ≤ actual se mantienen (salvo que el frame actual pinte
+ * comparing/swapping/pivot encima). No uses 'sorted' en pasos intermedios salvo posición ya fijada
+ * de verdad; para inserción/merge usa 'inserted' / 'merged'.
  *
  * @returns {object} Estado y controles del visualizador
  */
@@ -118,11 +98,7 @@ export function useAlgorithm(initialArray, stepGenerator) {
     msg: '',
   }
 
-  const highlight = useMemo(
-    () =>
-      mergeHighlightWithSortedHistory(steps, stepIdx, currentStep.highlight),
-    [steps, stepIdx, currentStep.highlight]
-  )
+  const highlight = currentStep.highlight || {}
 
   // ── Estadísticas acumuladas hasta el paso actual ─────────────────────────────
   const stats = steps.slice(0, stepIdx + 1).reduce(

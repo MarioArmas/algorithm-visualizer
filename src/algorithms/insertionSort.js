@@ -5,8 +5,6 @@ export function insertionSortSteps(arr) {
   const a = [...arr]
   const n = a.length
 
-  steps.push(snap(a, { 0: 'sorted' }, "Índice 0 ya está 'ordenado'"))
-
   for (let i = 1; i < n; i++) {
     const key = a[i]
     let j = i - 1
@@ -28,7 +26,11 @@ export function insertionSortSteps(arr) {
 
     a[j + 1] = key
     steps.push(
-      snap(a, { [j + 1]: 'sorted' }, `${key} insertado en índice ${j + 1} ✓`)
+      snap(
+        a,
+        { [j + 1]: 'inserted' },
+        `${key} insertado en índice ${j + 1} ✓`,
+      ),
     )
   }
 

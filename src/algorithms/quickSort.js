@@ -34,7 +34,7 @@ export function quickSortSteps(arr) {
     }
     ;[a[p], a[hi]] = [a[hi], a[p]]
     steps.push(
-      snap(a, { [p]: 'sorted' }, `Pivot ${a[p]} en posición final ${p} ✓`)
+      snap(a, {}, `Pivot ${a[p]} en posición final ${p} ✓`)
     )
     return p
   }

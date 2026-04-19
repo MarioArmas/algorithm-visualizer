@@ -33,7 +33,7 @@ export function selectionSortSteps(arr) {
         )
       )
     }
-    steps.push(snap(a, { [i]: 'sorted' }, `Posición ${i} fijada ✓`))
+    steps.push(snap(a, {}, `Posición ${i} fijada ✓`))
   }
 
   steps.push(snap(a, fullSortedHighlight(a.length), 'Array ordenado ✓'))
